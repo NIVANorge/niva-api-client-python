@@ -1,7 +1,7 @@
 from datetime import datetime
 from uuid import uuid4
 
-from domain.app import NivaApp
+from niva_api_client.domain.app import NivaApp
 
 
 def create_niva_app(

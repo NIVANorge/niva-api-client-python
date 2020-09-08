@@ -1,7 +1,7 @@
 from urllib.parse import urlparse, urlsplit, urlunparse
 
-from domain.app import NivaApp
-from environments import PORT_URL_PRODUCTION
+from niva_api_client.domain.app import NivaApp
+from niva_api_client.environments import PORT_URL_PRODUCTION
 
 
 def app_url(app: NivaApp, port_url=PORT_URL_PRODUCTION) -> str:

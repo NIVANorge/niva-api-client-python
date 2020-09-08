@@ -6,8 +6,8 @@ import poetry_version
 
 import requests
 
-from environments import PORT_URL_PRODUCTION
-from domain.access_token import AccessToken
+from niva_api_client.environments import PORT_URL_PRODUCTION
+from niva_api_client.domain.access_token import AccessToken
 
 
 def access_token(token: str) -> AccessToken:
@@ -17,6 +17,7 @@ def access_token(token: str) -> AccessToken:
     )
     response.raise_for_status()
     print(response.json())
+
     return AccessToken(**response.json())
 
 
