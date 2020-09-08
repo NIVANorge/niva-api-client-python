@@ -44,15 +44,14 @@ jobs:
           name: Run Pytest
           command: |
             python -m pytest
+
   # This is the definition of another job, the one we use to publish the package to PyPI
   deployment:
 
     # Same environment
-    docker:
+      docker:
         - image: circleci/python:3.6.8
       steps:
-
-        # Gets the code
         - checkout
 
         # Use `poetry publish` to Publish the package using username and password from CircleCI environment variables
@@ -61,6 +60,7 @@ jobs:
             name: Push to PyPI
             command: |
               poetry publish --build --username "${PYPI_USERNAME}" --password "${PYPI_PASSWORD}" --no-interaction
+
 # In the workflows section, we specify when we want to run the jobs defined
 workflows:
   version: 2
