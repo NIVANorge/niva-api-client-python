@@ -46,7 +46,7 @@ jobs:
             poetry run python -m pytest
 
   # This is the definition of another job, the one we use to publish the package to PyPI
-  deployment:
+  deploy:
 
     # Same environment
       docker:
@@ -72,7 +72,7 @@ workflows:
       - build-and-test
 
       # Runs the deployment job, just with the tags as well
-      - build-and-deploy:
+      - deploy:
           requires:
             - build-and-test
           filters:
