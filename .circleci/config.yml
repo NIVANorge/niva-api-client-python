@@ -65,10 +65,6 @@ jobs:
 workflows:
   version: 2
 
-  # The build-and-test we will run EVERYTIME a piece of code changes
-  build-and-test-workflow:
-    jobs:
-      - build-and-test
 
   # The deployment workflow publishes the package
   deployment-workflow:
@@ -76,9 +72,10 @@ workflows:
       - build-and-test
 
       # Runs the deployment job, just with the tags as well
-      - deployment:
+      - build-and-deploy:
           requires:
             - build-and-test
           filters:
-              tags:
-                only: master
+              branches:
+                only:
+                  - master
