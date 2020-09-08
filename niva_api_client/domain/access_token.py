@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from domain.niva_user import NivaUser
+from niva_api_client.domain.niva_user import NivaUser
 
 
 class TokenRefreshPayload(BaseModel):

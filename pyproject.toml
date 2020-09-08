@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "niva-api-client"
-version = "0.1.0"
+version = "0.1.1"
 description = "Client library for interacting with API's exposed at https://data.niva.no. Handles common tasks such as authentication"
 authors = ["Håkon Drolsum Røkenes <hakon.rokenes@niva.no>"]
 license = "MIT"
