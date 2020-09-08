@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Run Pytest
           command: |
-            python -m pytest
+            poetry run python -m pytest
 
   # This is the definition of another job, the one we use to publish the package to PyPI
   deployment:
