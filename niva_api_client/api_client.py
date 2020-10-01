@@ -10,13 +10,12 @@ from niva_api_client.environments import PORT_URL_PRODUCTION
 from niva_api_client.domain.access_token import AccessToken
 
 
-def access_token(token: str) -> AccessToken:
+def access_token(token: str, api_url=PORT_URL_PRODUCTION) -> AccessToken:
     response = requests.get(
-        f"{PORT_URL_PRODUCTION}/api/token/refresh",
+        f"{api_url}/api/token/refresh",
         headers={"Authorization": f"Bearer {token}"},
     )
     response.raise_for_status()
-    print(response.json())
 
     return AccessToken(**response.json())
 
